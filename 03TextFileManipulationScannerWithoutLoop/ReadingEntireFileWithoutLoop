@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ReadingEntireFileWithoutLoop {
     public static void main(String[] args) throws FileNotFoundException {
     
-        File file = new File("C:\\user\\pankaj\\Destop\\test.txt");
+        File file = new File("C:\\user\\pankaj\\Destop\\file.txt");
         Scanner sc = new Scanner(file);
 
        
