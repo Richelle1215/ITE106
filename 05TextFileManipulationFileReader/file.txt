@@ -1,0 +1,19 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+    fstream file;
+
+    my_file.open("file.txt", ios::out);
+    if (!file) {
+        cout << "File not created!";
+    } else {
+        cout << "File created successfully!" << endl;
+        file << "hello madlang people, mabuhay!";
+        file.close();
+    }
+
+    return 0;
+}
