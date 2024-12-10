@@ -1,0 +1,35 @@
+# Calculator Application
+
+A simple GUI-based calculator application built using Java Swing. This application provides basic arithmetic operations, supports a calculation history feature, and has a clean, color-coded interface.
+## Features
+- Basic arithmetic operations: addition, subtraction, multiplication, and division.
+- Displays the calculation history.
+- Clear input functionality.
+- Stylish and intuitive user interface.
+
+## Prerequisites
+- **Java Development Kit (JDK)**: Ensure you have JDK 8 or above installed on your system.
+- **Java Runtime Environment (JRE)**: Required to run the compiled application.
+
+## How to Compile and Run
+1. **Compile the Application**:
+   - Open a terminal or command prompt.
+   - Navigate to the directory containing the `CalculatorApp.java` file.
+   - Run the following command:
+     ```bash
+     javac CalculatorApp.java
+     ```
+
+2. **Run the Application**:
+   - After successful compilation, run the following command to start the application:
+     ```bash
+     java CalculatorApp
+     ```
+
+## Usage
+1. Input numbers and operators using the on-screen buttons.
+2. Press `=` to calculate the result.
+3. Use the `History` button to view previous calculations.
+4. Press `Clear` to reset the input field.
+
+
