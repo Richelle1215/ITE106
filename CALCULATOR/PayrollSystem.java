@@ -49,25 +49,24 @@ public class PayrollSystem extends JFrame {
         JButton btnDisplayRecord = addButton("Display Record", 50, 330);
         JButton btnViewSalary = addButton("View Salary", 200, 330);
 
-        // text area for output
         txtOutput = new JTextArea();
         txtOutput.setEditable(false);
         txtOutput.setFont(new Font("Monospaced", Font.PLAIN, 14));
-        txtOutput.setBackground(new Color(255,250,240)); // rgb color light pink
+        txtOutput.setBackground(new Color(255,250,240)); 
         JScrollPane scrollPane = new JScrollPane(txtOutput);
         scrollPane.setBounds(400, 100, 450, 300);
         add(scrollPane);
 
-        // button actions
+       
         btnAddEmployee.addActionListener(e -> addEmployee());
         btnSaveRecord.addActionListener(e -> saveRecords());
         btnDisplayRecord.addActionListener(e -> displayRecords());
         btnViewSalary.addActionListener(e -> viewSalary());
 
-        // to load existing records on startup
+      
         displayRecords();
 
-        // set the frame visible
+    
         setVisible(true);
     }
 
@@ -97,7 +96,7 @@ public class PayrollSystem extends JFrame {
         return button;
     }
 
-    // for adding employee to the output area
+
     private void addEmployee() {
         String employeeId = txtEmployeeId.getText();
         String name = txtName.getText();
@@ -126,7 +125,7 @@ public class PayrollSystem extends JFrame {
         }
     }
 
-    // for saving employee records to file
+ 
     private void saveRecords() {
         String employeeId = txtEmployeeId.getText();
         String name = txtName.getText();
@@ -148,7 +147,7 @@ public class PayrollSystem extends JFrame {
         }
     }
 
-    // to display all employee records
+  
     private void displayRecords() {
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
             txtOutput.setText("Employee Records:\n");
@@ -161,7 +160,7 @@ public class PayrollSystem extends JFrame {
         }
     }
 
-    // to view employee salary
+    
     private void viewSalary() {
         String employeeID = txtEmployeeId.getText();  
         
@@ -177,17 +176,17 @@ public class PayrollSystem extends JFrame {
             while ((line = reader.readLine()) != null) {
                 String[] fields = line.split(",");
                 if (fields[0].equals(employeeID)) {
-                    // for employee found, retrieve details
+                 
                     String name = fields[1];
                     double hourlyRate = Double.parseDouble(fields[2]);
                     double hoursWorked = Double.parseDouble(fields[3]);
 
-                    // to calculate gross pay, tax, and net pay
+                 
                     double grossPay = hourlyRate * hoursWorked;
-                    double tax = grossPay * 0.2; // 20% tax deduction
+                    double tax = grossPay * 0.2; 
                     double netPay = grossPay - tax;
 
-                    // to display salary details
+                
                     txtOutput.setText(
                         "Employee Salary Details:\n" +
                         "--------------------------\n" +
